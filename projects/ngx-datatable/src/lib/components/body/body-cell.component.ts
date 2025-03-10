@@ -320,7 +320,7 @@ export class DataTableBodyCellComponent<TRow extends Row = any> implements DoChe
 
   constructor() {
     this.cellContext = {
-      onCheckboxChangeFn: (event: MouseEvent | KeyboardEvent) => this.onCheckboxChange(event),
+      onCheckboxChangeFn: (event: Event) => this.onCheckboxChange(event),
       activateFn: (event: ActivateEvent<TRow>) => this.activate.emit(event),
       row: this.row,
       group: this.group,
@@ -440,7 +440,7 @@ export class DataTableBodyCellComponent<TRow extends Row = any> implements DoChe
     }
   }
 
-  onCheckboxChange(event: MouseEvent | KeyboardEvent): void {
+  onCheckboxChange(event: Event): void {
     this.activate.emit({
       type: 'checkbox',
       event,
