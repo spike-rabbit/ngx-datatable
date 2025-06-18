@@ -1,11 +1,94 @@
 # Changelog
 
+## 23.0.0-rc.0 (2025-06-18)
+
+- Feature: include sorts in page event (#248)
+- Feature: include pager aria labels in text messages
+- Feature: add touch support for reorderable and resizable features (#181)
+- Feature: update project to Angular 19
+- Feature: add type for details toggle event (#173)
+- Feature: add type for context menu event (#174)
+- Feature: configurable defaultColumnWidth
+- Feature: introduce proper types for public API (#49)
+- Fix: prevent errors with row-specific ghost in combination with grouping, selection and trees (#241)
+- Fix: introduce a default value for rows
+- Fix: remove unwanted space below the rows (#214)
+- Fix: apply even/odd classes correctly when rows are grouped (#111)
+- Fix: add missing type to comparator (#167)
+- Fix: only run disabled check on rows
+- Fix: allow partial overrides of messages (#152)
+- Fix: allow partial overrides of CSS classes (#151)
+- Fix: add missing space before headerClass (#138)
+- Fix: do not bind content as `innerHTML` by default (#126)
+- Fix: update group checkbox state on child row selection state change
+- Fix: horizontal scroll
+- Fix: partial values for messages and cssClasses
+- Fix: hide rows when ghostLoading with no virtualization
+- Fix: calculate column widths only when table is visible
+- Fix: add missing type for header and cell style classes
+- Fix: resetting table with empty array
+- Fix: align TableColumn directive and interface types
+- Fix: improve `ActivateEvent`
+- Fix: type cell context
+- Fix: improve types for row grouping
+- Fix: `datatable-scroller` width should update on recalculate (#79)
+- Breaking: All inputs except `template` of `DatatableFooterDirective` have been
+  dropped from the footer directive. Those were unused. Remove any usages without
+  replacement.
+- Breaking: `INgxDatatableConfig.messages` now requires new keys for the pager
+  aria labels.
+- Breaking: Angular v19 or higher is required.
+- Breaking: The datatable no longer accepts `undefined` as a value of the `count`
+  input.
+- Breaking: The datatable body no longer has spacing below the last row. If
+  needed for whatever reason, this must be added manually. Workarounds removing
+  this extra space must be dropped.
+- Breaking: Previously `CellContext.rowIndex` was a `string` if the row was
+  inside a group. Now `CellContext.rowIndex` is always a number. Either
+  containing the index of the row or if the row is inside a group, the index of
+  the group. To access the index value of a row within a group, use the new
+  `CellContext.rowInGroupIndex`.
+- Breaking: Removed `ResizeableDirective`. This directive was intended for
+  internal use to handle column resizing, which is now managed directly in the
+  `DataTableHeaderCellComponent`.
+- Breaking: The row detail context (`RowDetailContext`) no longer contains
+  `disableRow$?: Observable<boolean>`. Use the new `disabled: boolean` value
+  instead.
+- Breaking: The cell context (`CellContext`) no longer contains
+  `disableRow$?: Observable<boolean>`. Use the new `disabled: boolean` value
+  instead.
+- Breaking: `disableRowCheck` will only be called with actual rows. Although
+  documented otherwise, in the case of groups, the `disableRowCheck` was only
+  called for groups instead of each row inside that group. This allows disabling
+  single rows inside a group and not only entire groups. To update the disabled
+  state of a row just update the row itself instead of using the previous
+  `disableRow$` subject.
+- Breaking: Removed several symbols from the public API that were intended to be
+  internal.
+- Breaking: Removed polyfill for `elementsFromPoint` since `elementsFromPoint`
+  is now supported by all major browsers.
+- Breaking: Previously, cell values were bound using `innerHTML`. With this
+  change they are now bound using normal data binding. This means that any html
+  markup will no longer be rendered. To restore the previous behavior set
+  `bindAsUnsafeHtml` on columns where needed. We decided to change this behavior,
+  as binding `innerHTML` can lead to HTML injection. Especially in table content
+  which are often untrusted user generated content.
+- Breaking: Header cell names are now bound using data binding instead of `innerHTML`.
+  Use a `headerTemplate` to provide custom html markup.
+- Breaking: Changed `Keys` enum to use `key` value instead of `keyCode`. `keyCode`
+  is deprecated from `KeyBoardEvent` and should be replaced with `key`.
+- Breaking: Vendor prefixes are no longer applied for css `transform`. The
+  related helpers are removed from the public api.
+- Breaking: Angular v18.2 or above is required.
+- Breaking: Change signature from `onBodyPage({ offset }: any): void` to `onBodyPage(offset: number): void`.
+- Breaking: Almost every public API has now proper types. While this should in
+  theory not affect applications it will now fail compilation if the APIs were
+  used in an incorrect manner.
+
 ## 22.4.1 (2024-07-26)
 
-### Bug Fixes
-
-- **disabled-rows:** recalculate only if row differs (#73) (f3131cb)
-- tree grouping breaks if rows are assigned statically (#77) (d4f1ba5)
+- Fix: recalculate only if row differs (#73)
+- Fix: tree grouping breaks if rows are assigned statically (#77)
 
 ## 22.4.0
 
