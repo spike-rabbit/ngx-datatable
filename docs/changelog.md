@@ -1,5 +1,20 @@
 # Changelog
 
+## 23.0.0-rc.1 (2025-06-22)
+
+- Feature: introduce a new `providedNgxDatatableConfig` for a standalone way to configure the datatable (#259)
+- Breaking: Previously the datatable applied `box-sizing: border-box` to all its
+  elements. This is no longer the case. Custom themes that depend on this must
+  set this behavior manually, using:
+
+  ```css
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  ```
+
 ## 23.0.0-rc.0 (2025-06-18)
 
 - Feature: include sorts in page event (#248)
