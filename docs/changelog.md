@@ -1,6 +1,13 @@
 # Changelog
 
-## 23.0.0-rc.2 (2025-06-22)
+## 23.0.0 (2025-06-24)
+
+*No changes since `23.0.0-rc.2`.*
+
+See [`23.0.0-rc.0`](#2300-rc0-2025-06-18), [`23.0.0-rc.1`](#2300-rc1-2025-06-22), and [`23.0.0-rc.2`](#2300-rc2-2025-06-24)
+for all changes since the last stable release.
+
+## 23.0.0-rc.2 (2025-06-24)
 
 - Fix: fix keyboard interaction for cell selection mode
 
@@ -54,8 +61,6 @@
 - Breaking: All inputs except `template` of `DatatableFooterDirective` have been
   dropped from the footer directive. Those were unused. Remove any usages without
   replacement.
-- Breaking: `INgxDatatableConfig.messages` now requires new keys for the pager
-  aria labels.
 - Breaking: Angular v19 or higher is required.
 - Breaking: The datatable no longer accepts `undefined` as a value of the `count`
   input.
