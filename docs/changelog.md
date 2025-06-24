@@ -1,5 +1,9 @@
 # Changelog
 
+## 23.0.0-rc.2 (2025-06-22)
+
+- Fix: fix keyboard interaction for cell selection mode
+
 ## 23.0.0-rc.1 (2025-06-22)
 
 - Feature: introduce a new `providedNgxDatatableConfig` for a standalone way to configure the datatable (#259)
@@ -94,7 +98,6 @@
   is deprecated from `KeyBoardEvent` and should be replaced with `key`.
 - Breaking: Vendor prefixes are no longer applied for css `transform`. The
   related helpers are removed from the public api.
-- Breaking: Angular v18.2 or above is required.
 - Breaking: Change signature from `onBodyPage({ offset }: any): void` to `onBodyPage(offset: number): void`.
 - Breaking: Almost every public API has now proper types. While this should in
   theory not affect applications it will now fail compilation if the APIs were
