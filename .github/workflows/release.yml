@@ -5,6 +5,8 @@ on:
 jobs:
   build-and-test:
     uses: ./.github/workflows/test_and_deploy.yml
+    secrets:
+      CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
   publish:
     runs-on: ubuntu-22.04
