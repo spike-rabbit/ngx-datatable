@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/spike-rabbit/ngx-datatable/compare/1.0.0...1.0.1) (2025-06-26)
+
+
+### Bug Fixes
+
+* ignore prettier ([9ae0650](https://github.com/spike-rabbit/ngx-datatable/commit/9ae0650d7490c3c5d52d5ee35996194584892c9d))
+* publish pulib ([40ade1b](https://github.com/spike-rabbit/ngx-datatable/commit/40ade1ba1a64ae633e9f12dbc4d2a9ba33095976))
+
 # 1.0.0 (2025-06-26)
 
 
