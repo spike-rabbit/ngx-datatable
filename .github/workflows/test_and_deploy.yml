@@ -38,8 +38,8 @@ jobs:
       - name: Archive build
         uses: actions/upload-artifact@v4
         with:
-          name: build
-          path: dist/ngx-datatable
+          name: dist
+          path: dist
 
       - name: Test
         run: npm run ci

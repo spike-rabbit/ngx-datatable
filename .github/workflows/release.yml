@@ -23,8 +23,8 @@ jobs:
           cache: 'npm'
       - uses: actions/download-artifact@v4
         with:
-          name: build
-          path: dist/ngx-datatable
+          name: dist
+          path: dist
       - run: npm ci --prefer-offline --no-audit
       - run: npx semantic-release
         env:
