@@ -85,8 +85,8 @@ jobs:
       - name: Download build
         uses: actions/download-artifact@v4
         with:
-          name: build
-          path: dist/ngx-datatable
+          name: dist
+          path: dist
 
       - name: Install
         run: npm ci
