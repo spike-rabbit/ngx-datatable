@@ -1,3 +1,22 @@
+# [24.1.0](https://github.com/siemens/ngx-datatable/compare/24.0.0...24.1.0) (2025-07-16)
+
+
+### Features
+
+* export pager component for reuse in custom footer ([d1bd9c0](https://github.com/siemens/ngx-datatable/commit/d1bd9c08c475dc05c64d23b370fc469cc80b0d61)), closes [#324](https://github.com/siemens/ngx-datatable/issues/324)
+
+
+### Bug Fixes
+
+* avoid duplicate row identity warnings ([8f32d43](https://github.com/siemens/ngx-datatable/commit/8f32d43bc4b40eb05e894a57dcd97d9c9c6c1d62))
+* make pager accessible with keyboard ([de21d1b](https://github.com/siemens/ngx-datatable/commit/de21d1b89754267985df345a59065f7543f1169b)), closes [#339](https://github.com/siemens/ngx-datatable/issues/339)
+* no error on undefined limit ([12522dd](https://github.com/siemens/ngx-datatable/commit/12522dd477cf29de8c1db3533aaabc43616a2e93)), closes [#349](https://github.com/siemens/ngx-datatable/issues/349)
+
+
+### Performance Improvements
+
+* optimize `DraggableDirective` with `requestAnimationFrame` for smoother updates ([5dd8628](https://github.com/siemens/ngx-datatable/commit/5dd862828d92fb568c78365b4d637940d2ca9415))
+
 # [24.0.0](https://github.com/siemens/ngx-datatable/compare/23.0.0...24.0.0) (2025-07-02)
 
 
